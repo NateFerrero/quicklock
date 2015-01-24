@@ -1,0 +1,1 @@
+from quicklock import singleton

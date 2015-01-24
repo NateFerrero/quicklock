@@ -1,4 +1,4 @@
-from quicklock.quicklock import singleton
+from quicklock import singleton
 import time
 from unittest import TestCase
 
