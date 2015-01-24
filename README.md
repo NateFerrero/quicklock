@@ -5,7 +5,7 @@ A simple Python resource lock to ensure only one process at a time is operating 
 
 Singleton creates a file containing process information to ensure that the process that created the lock is still alive. The default location is in the `.lock` directory in the current working directory. If this directory does not exist, `singleton` will create it automatically.
 
-### Simple usage:
+#### Simple usage:
 
 ```python
 from quicklock import singleton
@@ -17,7 +17,7 @@ singleton('my-process') # This will ensure that only one of these is running at 
 # Intensive processing here
 ```
 
-### Specifying the lock directory:
+#### Specifying the lock directory:
 
 ```python
 from quicklock import singleton
