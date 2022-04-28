@@ -12,7 +12,7 @@ class SingletonTestCase(TestCase):
             time.sleep(60)
             print('>> Test Note: Quitting and releasing lock')
 
-        except RuntimeError, exc:
+        except RuntimeError as exc:
             print('>> Test Note: Lock was already in use')
             self.assertTrue(isinstance(exc, RuntimeError))
             self.assertTrue('Resource <resource> is currently locked by' in exc.message)
