@@ -51,7 +51,7 @@ def obtain_lock(resource_name: str, lock_file: os.PathLike):
         )
 
 
-def singleton(resource_name: str, dirname=".lock"):
+def singleton(resource_name: str, dirname: os.PathLike = ".lock"):
     """
     Lock a resource name so that if this function is called again before the lock is
     released, a RuntimeError will be raised.
@@ -63,7 +63,7 @@ def singleton(resource_name: str, dirname=".lock"):
     lock_root = Path(dirname)
 
     if not lock_root.exists():
-        lock_root.mkdir()
+        lock_root.mkdir(parents=True)
 
     lock_name = re.sub(r"[^a-zA-Z0-9]+", "_", resource_name)
     lock_file = (lock_root / lock_name).with_suffix(".lock")
